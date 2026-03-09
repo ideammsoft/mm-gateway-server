@@ -1,0 +1,12 @@
+#이름이 왜 필요한가? 왜 로컬에서 부여?
+
+spring:
+  application:
+    name: mm-gateway-server
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:1761/eureka/
