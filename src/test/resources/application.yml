@@ -1,0 +1,15 @@
+# src/test/resources/application.yml
+spring:
+  cloud:
+    config:
+      enabled: false  # 테스트 시에는 Config Server를 찾지 않음
+
+app:
+  jwt:
+    secret: "test_secret_key_at_least_32_characters_long_for_hs256"
+    access-token-minutes: 5
+    refresh-token-minutes: 60
+
+eureka:
+  client:
+    enabled: false  # 테스트 시 유레카 연동 안 함
