@@ -32,11 +32,17 @@ public class JwtFilter implements GlobalFilter, Ordered {
     Public API를 요청할 경우, 게이트웨이는 관여하면 안된다.. 즉 그냥 통과시켜야할 명단
     ------------------------------------*/
     private static final List<String>  PUBLIC_PREFIX=List.of(
+            "/api/auth/idcheck",
             "/api/auth/regist",
             "/api/auth/login",
             "/api/auth/refresh",
+            "/api/auth/idpassfind",
+            "/api/auth/oauth2",  // OAuth2 임시코드 교환 (토큰 없이 호출)
+            "/api/workboard",    // 워크보드 목록 (비로그인 공개)
             "/swagger-ui",
             "/swagger-ui.html",
+            "/oauth2",          // OAuth2 인증 시작 경로 (구글 로그인 등)
+            "/login/oauth2",     // OAuth2 Callback(Redirect URI) 경로
             "/actuator" //헬스 체크
     );
     private boolean isPublicPath(String path){
@@ -87,6 +93,7 @@ public class JwtFilter implements GlobalFilter, Ordered {
         로그인 요청, 로그아웃 요청, 기타 token이 필요 없는 요청들에 대해서는 요청의 흐름을 다운스트림으로 전환
         -------------------------------------------------------*/
         String path = exchange.getRequest().getURI().getPath();
+        log.debug("Current Request Path: {}", path);
         if(isPublicPath(path)){
             return chain.filter(exchange);
         }
