@@ -59,3 +59,6 @@ Thumbs.db
 # 로그 및 환경변수
 *.log
 .env
+
+# 로컬 개발 설정 (민감 정보 포함 - Git에 올리지 않음)
+src/main/resources/application-dev.yml
