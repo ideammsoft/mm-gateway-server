@@ -39,6 +39,7 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/auth/idpassfind",
             "/api/auth/oauth2",  // OAuth2 임시코드 교환 (토큰 없이 호출)
             "/api/workboard",    // 워크보드 목록 (비로그인 공개)
+            "/api/freeboard",    // 커뮤니티 게시판 (비로그인 조회 허용)
             "/swagger-ui",
             "/swagger-ui.html",
             "/oauth2",          // OAuth2 인증 시작 경로 (구글 로그인 등)
