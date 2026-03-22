@@ -41,6 +41,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/workboard",    // 워크보드 목록 (비로그인 공개)
             "/api/freeboard",    // 커뮤니티 게시판 (비로그인 조회 허용)
             "/swagger-ui",
+            "/api/pds",
+            "/images/pds",      // 제품소개 썸네일 이미지 (비로그인 공개)
             "/swagger-ui.html",
             "/oauth2",          // OAuth2 인증 시작 경로 (구글 로그인 등)
             "/login/oauth2",     // OAuth2 Callback(Redirect URI) 경로
