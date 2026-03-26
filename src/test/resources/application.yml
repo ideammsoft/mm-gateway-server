@@ -6,7 +6,7 @@ spring:
 
 app:
   jwt:
-    secret: "test_secret_key_at_least_32_characters_long_for_hs256"
+    secret: "dGVzdC1zZWNyZXQta2V5LWZvci11bml0LXRlc3RzLW11c3QtYmUtbG9uZy1lbm91Z2g="
     access-token-minutes: 5
     refresh-token-minutes: 60
 
