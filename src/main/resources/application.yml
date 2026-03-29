@@ -3,10 +3,12 @@
 spring:
   application:
     name: mm-gateway-server
+  config:
+    import: "optional:configserver:http://mm-config-server:1882"
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:1761/eureka/
+      defaultZone: http://mm-eureka-server:1761/eureka/
