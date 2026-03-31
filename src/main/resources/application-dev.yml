@@ -1,7 +1,9 @@
 # 2. 여기서부터는 spring: 안으로 들어가면 안 됩니다! (맨 앞으로 당기기)
 app:
   jwt:
-    secret: ${JWT_SECRET}
+    # config server에서 주입 (mm-gateway-server-dev.yml의 app.jwt.secret)
+    # fallback: JWT_SECRET 환경변수
+    secret: ${JWT_SECRET:UzNaOFFKS0UyTUd1eUVhVnhoU0tOcVI1V0w3Y1Q5Yzg=}
     access-token-minutes: 15
     refresh-token-minutes: 20160
 

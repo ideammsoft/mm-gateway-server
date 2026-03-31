@@ -4,7 +4,7 @@ spring:
   application:
     name: mm-gateway-server
   config:
-    import: "optional:configserver:http://mm-config-server:1882"
+    import: "optional:configserver:http://mm-config-server:1881"
 
 eureka:
   client:
