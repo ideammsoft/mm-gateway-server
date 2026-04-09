@@ -35,6 +35,7 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/auth/idcheck",
             "/api/auth/regist",
             "/api/auth/login",
+            "/api/auth/admin/login",
             "/api/auth/refresh",
             "/api/auth/idpassfind",
             "/api/auth/oauth2",  // OAuth2 임시코드 교환 (토큰 없이 호출)
