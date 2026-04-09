@@ -136,7 +136,14 @@ public class JwtFilter implements GlobalFilter, Ordered {
 
         List<String> rolesList=claims.get("roles", List.class);
 
-        String roles=String.join(",", rolesList);
+        String roles;
+        if (rolesList != null) {
+            roles = String.join(",", rolesList);
+        } else {
+            // admin 토큰은 "role" 단수 클레임 사용
+            String singleRole = claims.get("role", String.class);
+            roles = singleRole != null ? singleRole : "";
+        }
 
         //현재의 요청 헤더에 원하는 값 심기
         ServerWebExchange mutatedExchange = exchange.mutate().request(req->req.headers(headers->{
