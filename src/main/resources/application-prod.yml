@@ -2,10 +2,10 @@
 #Config 서버를 통해 정보를 가져오기
 spring:
   config:
-    import: "optional:configserver:http://config-server:1881"
+    import: "optional:configserver:http://mm-config-server:1881"
 
 #Eureka Server 찾기
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-server:1761/eureka/
+      defaultZone: http://mm-eureka-server:1761/eureka/

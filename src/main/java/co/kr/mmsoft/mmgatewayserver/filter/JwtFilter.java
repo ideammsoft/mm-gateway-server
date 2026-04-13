@@ -46,8 +46,9 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/images/pds",      // 제품소개 썸네일 이미지 (비로그인 공개)
             "/swagger-ui.html",
             "/oauth2",          // OAuth2 인증 시작 경로 (구글 로그인 등)
-            "/login/oauth2",     // OAuth2 Callback(Redirect URI) 경로
-            "/actuator" //헬스 체크
+            "/login/oauth2",    // OAuth2 Callback(Redirect URI) 경로
+            "/actuator",        // 헬스 체크
+            "/api/payment/"     // 결제 콜백 - JWT 없이 KSPay/PC앱에서 호출
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
