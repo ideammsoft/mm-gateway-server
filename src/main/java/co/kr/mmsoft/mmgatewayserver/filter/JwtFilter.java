@@ -48,7 +48,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/oauth2",          // OAuth2 인증 시작 경로 (구글 로그인 등)
             "/login/oauth2",    // OAuth2 Callback(Redirect URI) 경로
             "/actuator",        // 헬스 체크
-            "/api/payment/"     // 결제 콜백 - JWT 없이 KSPay/PC앱에서 호출
+            "/api/payment/",    // 결제 콜백 - JWT 없이 KSPay/PC앱에서 호출
+            "/api/auth/nice"    // NICE 본인인증 콜백 - JWT 없이 NICE 서버에서 호출
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
