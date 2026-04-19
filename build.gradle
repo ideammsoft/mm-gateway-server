@@ -47,6 +47,9 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+    // Spring Security (CSRF 비활성화, CORS 설정을 위해 필요)
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     //JWT
     implementation("io.jsonwebtoken:jjwt-api:0.12.6")
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.12.6")
