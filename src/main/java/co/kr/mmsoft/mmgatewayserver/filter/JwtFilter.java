@@ -50,7 +50,13 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/actuator",        // 헬스 체크
             "/api/payment/",    // 결제 콜백 - JWT 없이 KSPay/PC앱에서 호출
             "/api/auth/nice",   // NICE 본인인증 콜백 - JWT 없이 NICE 서버에서 호출
-            "/api/auth/contact" // 광고페이지 문의 폼 - 비로그인 공개
+            "/api/auth/contact", // 광고페이지 문의 폼 - 비로그인 공개
+            "/api/noim/sender/upload-doc",
+            "/api/noim/sender/register",
+            "/api/noim/sender/my",
+            "/api/noim/sender/info",
+            "/api/noim/sms/send",
+            "/api/noim/sms/balance-by-key"
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
