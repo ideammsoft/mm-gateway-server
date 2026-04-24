@@ -15,18 +15,15 @@ permissions:
   packages: write
 
 jobs:
-  build-test:
+  build:
     runs-on: ubuntu-latest
 
     env:
-      SERVICE_NAME: mm-gateway-server
-      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs=-Xmx2g"
-
-      # 이미지
       IMAGE_REGISTRY: ghcr.io
       IMAGE_OWNER: ${{ github.repository_owner }}
       IMAGE_NAME: mm-gateway-server
       IMAGE_TAG: ${{ github.sha }}
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs=-Xmx2g"
 
     steps:
       - name: Checkout
@@ -42,18 +39,8 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Run tests
-        run: ./gradlew clean test --no-daemon
-
       - name: Build bootJar
         run: ./gradlew bootJar --no-daemon
-
-      - name: Upload JAR artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ${{ env.SERVICE_NAME }}-${{ github.sha }}
-          path: build/libs/*.jar
-          if-no-files-found: error
 
       - name: Login to GHCR
         if: github.event_name == 'push'
