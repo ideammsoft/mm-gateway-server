@@ -56,7 +56,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/noim/sender/my",
             "/api/noim/sender/info",
             "/api/noim/sms/send",
-            "/api/noim/sms/balance-by-key"
+            "/api/noim/sms/balance-by-key",
+            "/api/noim/sms/card-charge"
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
