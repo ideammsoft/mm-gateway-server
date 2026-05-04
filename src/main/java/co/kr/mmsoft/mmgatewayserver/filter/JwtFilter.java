@@ -55,6 +55,7 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/noim/sender/register",
             "/api/noim/sender/my",
             "/api/noim/sender/info",
+            "/api/noim/sender/resend-key",
             "/api/noim/sms/send",
             "/api/noim/sms/balance-by-key",
             "/api/noim/sms/card-charge",
