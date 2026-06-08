@@ -63,7 +63,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/noim/kakao/send",
             "/api/noim/kakao/templates",
             "/api/noim/access-log",
-            "/api/noim/kakao/channel-by-api-key"
+            "/api/noim/kakao/channel-by-api-key",
+            "/api/license/expiry"   // 맨들 클라이언트가 X-Api-Key 로 연장기한 조회 (JWT 불필요)
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
