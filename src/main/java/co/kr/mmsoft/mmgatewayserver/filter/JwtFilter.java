@@ -67,7 +67,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/license/expiry",  // 맨들 클라이언트가 X-Api-Key 로 연장기한 조회 (JWT 불필요)
             "/api/license/session", // 맨들 클라이언트 중복사용 감지 세션(acquire/heartbeat/release, X-Api-Key)
             "/api/auth/version",    // 아이디로 manyman.version 조회 (VB6 레거시: 신/구 만료일 구분자)
-            "/api/auth/fee"         // 아이디로 manyman.codeman(회비) 조회 (VB6 레거시)
+            "/api/auth/fee",        // 아이디로 manyman.codeman(회비) 조회 (VB6 레거시)
+            "/api/auth/userinfo"    // 아이디로 manyman 필드묶음 조회 (VB6 레거시 로그인 후 세팅)
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
