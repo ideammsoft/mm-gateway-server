@@ -69,7 +69,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/auth/version",    // 아이디로 manyman.version 조회 (VB6 레거시: 신/구 만료일 구분자)
             "/api/auth/fee",        // 아이디로 manyman.codeman(회비) 조회 (VB6 레거시)
             "/api/auth/userinfo",   // 아이디로 manyman 필드묶음 조회 (VB6 레거시 로그인 후 세팅)
-            "/api/auth/jbcode"      // JBCode(지번코드) 전체 (VB6 레거시: 로컬 zipcode.mdb 동기화)
+            "/api/auth/jbcode",     // JBCode(지번코드) 전체 (VB6 레거시: 로컬 zipcode.mdb 동기화)
+            "/api/admin/sms"        // VB6 문자 발송/잔액 (자체 AES 인증, JWT 면제)
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
