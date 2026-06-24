@@ -72,7 +72,8 @@ public class JwtFilter implements GlobalFilter, Ordered {
             "/api/auth/jbcode",     // JBCode(지번코드) 전체 (VB6 레거시: 로컬 zipcode.mdb 동기화)
             "/api/admin/sms",       // VB6 문자 발송/잔액 (자체 AES 인증, JWT 면제)
             "/api/admin/license",   // 만료일 일괄이관 (1회성 curl)
-            "/api/admin/address"    // VB6 도로명주소 검색 (juso 프록시, JWT 면제)
+            "/api/admin/address",   // VB6 도로명주소 검색 (juso 프록시, JWT 면제)
+            "/api/giro"             // 오픈지로 납부결과 콜백 (금결원이 호출, JWT 면제)
     );
     private boolean isPublicPath(String path){
         return PUBLIC_PREFIX.stream().anyMatch(path::startsWith);
